@@ -628,8 +628,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1600382826}
   - component: {fileID: 1600382828}
-  - component: {fileID: 1600382827}
   - component: {fileID: 1600382829}
+  - component: {fileID: 1600382827}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1600382825}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4213f68157dac0a49ac1905bc8904643, type: 3}
+  m_Script: {fileID: 11500000, guid: dbaf055a15fd47c5ac5cc3526ec89009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &1600382828
