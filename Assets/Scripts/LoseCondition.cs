@@ -12,7 +12,7 @@ public class LoseCondition : MonoBehaviour
 
     void GameOver(string argument)
     {
-        Debug.Log("Event" + argument + "fired");
+        Debug.Log("Event " + argument + " fired!");
         _eventHandler.UnsubscribeFrom<string>(GameOver);
         Time.timeScale = 0;
     }
