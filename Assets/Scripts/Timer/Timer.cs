@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     [SerializeField] private float gameTimerInSeconds;
+    [SerializeField] private Text gameTimerTextObject;
+    [SerializeField] private string gameTimerTextFormat = $"Time Left:";
+    
     private float timerInterval;
     private float elapsedTime;
     
-    private bool TimerOut => gameTimerInSeconds <= 0;
+    private bool TimeOut => gameTimerInSeconds <= 0f;
     
     private WinLoseConditionsBroker _eventHandler;
     
@@ -18,18 +22,30 @@ public class Timer : MonoBehaviour
     
     void Update()
     {
-        if (TimerOut) TimeOut();
-        elapsedTime = elapsedTime + Time.deltaTime;
-        
+        if (!TimeOut)
+        {
+            UpdateTimer();
+        }
+        else
+        {
+            UpdateTimer();
+            _eventHandler.Publish("TimeOut");
+        }
+
         if (elapsedTime >= timerInterval)
         {
             gameTimerInSeconds -= timerInterval;
             elapsedTime -= timerInterval;
         }
+        elapsedTime = elapsedTime + Time.deltaTime;
     }
-
-    void TimeOut()
+    
+    private void UpdateTimer()
     {
-        _eventHandler.Publish("TimeOut");
+        if (gameTimerInSeconds < 0)
+        {
+            gameTimerInSeconds = 0;
+        }
+        gameTimerTextObject.text = $"{gameTimerTextFormat} {gameTimerInSeconds}s";
     }
 }
