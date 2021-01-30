@@ -56,8 +56,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7969506, y: 1, z: 0.7792166}
-  m_Center: {x: 0.0015327147, y: 0, z: 0.7259383}
+  m_Size: {x: 0.7969506, y: 1, z: 0.83986247}
+  m_Center: {x: 0.0015326944, y: 0, z: 0.5732825}
 --- !u!1 &8507219878869638954
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +225,8 @@ GameObject:
   - component: {fileID: 8507219880234220733}
   - component: {fileID: 8507219880234220730}
   - component: {fileID: 8507219880234220731}
+  - component: {fileID: 8856611442626289444}
+  - component: {fileID: 7066709362828545424}
   m_Layer: 0
   m_Name: Seat
   m_TagString: Untagged
@@ -308,8 +310,33 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0646075, y: 1, z: 1}
+  m_Center: {x: 0.032303706, y: 0, z: 0}
+--- !u!65 &8856611442626289444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507219880234220729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2017467, y: 0.99999994, z: 0.7109003}
+  m_Center: {x: 0.00050486997, y: 0, z: -0.019494057}
+--- !u!114 &7066709362828545424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507219880234220729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34da8ea718e520d4baa837eec07c9f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8507219880361476265
 GameObject:
   m_ObjectHideFlags: 0
