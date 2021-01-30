@@ -47,7 +47,7 @@ public class SpinningWheel : MonoBehaviour
     {
         onWheel = false;
         
-        var dir = attachmentPoint.transform.position; 
+        var dir = attachmentPoint.transform.forward; 
         var forceDir = dir.normalized * forceMultifier;
         player.GetComponent<Rigidbody>().AddForce(forceDir, ForceMode.Impulse);
         player.GetComponent<PlayerMovement>().isStuck = false;
