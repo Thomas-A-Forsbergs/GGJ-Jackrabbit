@@ -76,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
     private void MoveInDirectionCameraIsPointing()
     {
         var dir = (Vector3.forward - cameraTransform.localPosition).normalized;
+        print(dir);
         transform.Translate(new Vector3(dir.x * Time.deltaTime * moveSpeed, 0, dir.z * Time.deltaTime * moveSpeed));
     }
 
