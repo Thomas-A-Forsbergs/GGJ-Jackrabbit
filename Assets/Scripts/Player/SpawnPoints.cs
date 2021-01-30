@@ -12,7 +12,7 @@ public class SpawnPoints : MonoBehaviour {
         foreach(Transform child in children) {
             spawnPoints.Add(child.transform);
         }
-        int randomIndex = UnityEngine.Random.Range(0, spawnPoints.Count-1);
+        int randomIndex = UnityEngine.Random.Range(0, spawnPoints.Count);
         player.transform.position = spawnPoints[randomIndex].position;
     }
 }
