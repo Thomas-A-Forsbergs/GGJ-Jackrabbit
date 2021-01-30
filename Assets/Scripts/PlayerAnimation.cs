@@ -10,7 +10,6 @@ public class PlayerAnimation : MonoBehaviour
     private void WalkAnim(WalkEvent walkEvent)
     {
         var left = walkEvent.CurrentWalkState == WalkEvent.WalkState.Left;
-        GetComponent<Animator>().SetBool("RightStepPressed", !left);
-        GetComponent<Animator>().SetBool("LeftStepPressed", left);
+        GetComponent<Animator>().SetTrigger(left ? "LeftStepPressed" : "RightStepPressed");
     }
 }
