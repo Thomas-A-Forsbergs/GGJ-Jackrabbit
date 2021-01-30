@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Transform cameraTransform;
-    public KeyCode[] moveKeys;
+    public KeyBind[] moveKeys;
     public float moveSpeed;
     private int _keyIndex;
     private int _animState;
+    private bool _justMoved;
 
     private EventsBroker _eventHandler;
     private PlayerContextEvent _playerContextButtonEvent;
@@ -25,15 +27,34 @@ public class PlayerMovement : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(moveKeys[_keyIndex]) && !isStuck)
+        if (_justMoved) return;
+        var currentKeyBind = moveKeys[_keyIndex];
+        foreach (var keyCode in currentKeyBind.codes)
         {
-            Walk();
+            if (Input.GetKeyDown(keyCode) && !isStuck)
+            {
+                Walk();
+            }
+            else if (Input.GetKeyDown(keyCode) && isStuck)
+            {
+                _eventHandler.Publish(_playerContextButtonEvent);
+                this.isStuck = false;
+                RandomizeInput();
+            }
         }
-        else if(Input.GetKeyDown(moveKeys[_keyIndex]) && isStuck)
+
+        foreach (var axis in currentKeyBind.axes)
         {
-            _eventHandler.Publish(_playerContextButtonEvent);
-            this.isStuck = false;
-            RandomizeInput();
+            if (Input.GetAxis(axis) >= 0.9f && !isStuck)
+            {
+                Walk();
+            }
+            else if (Input.GetAxis(axis) >= 0.9f && isStuck)
+            {
+                _eventHandler.Publish(_playerContextButtonEvent);
+                this.isStuck = false;
+                RandomizeInput();
+            }
         }
     }
 
@@ -41,7 +62,10 @@ public class PlayerMovement : MonoBehaviour
     {
         MoveInDirectionCameraIsPointing();
         RandomizeInput();
+        _justMoved = true;
+        StartCoroutine(ResetDelay());
         _eventHandler.Publish(new WalkEvent(_animState));
+        _animState++;
     }
 
     private void RandomizeInput()
@@ -54,5 +78,34 @@ public class PlayerMovement : MonoBehaviour
     {
         var dir = (Vector3.forward - cameraTransform.localPosition).normalized;
         transform.Translate(new Vector3(dir.x * Time.deltaTime * moveSpeed, 0, dir.z * Time.deltaTime * moveSpeed));
+    }
+
+    private IEnumerator ResetDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _justMoved = false;
+    }
+}
+
+[System.Serializable]
+public class KeyBind
+{
+    public KeyCode[] codes;
+    public string[] axes;
+
+    public override string ToString()
+    {
+        var fullString = "";
+        foreach (var keyCode in codes)
+        {
+            fullString = keyCode + " ";
+        }
+
+        foreach (var axis in axes)
+        {
+            fullString = axis + " ";
+        }
+
+        return fullString;
     }
 }

@@ -8,9 +8,9 @@ public class LoseConditionEvent { }
 
 public class RandomKeyEvent
 {
-    public readonly KeyCode CurrentKey;
+    public readonly KeyBind CurrentKey;
 
-    public RandomKeyEvent(KeyCode currentKey)
+    public RandomKeyEvent(KeyBind currentKey)
     {
         this.CurrentKey = currentKey;
     }
