@@ -60,7 +60,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void RandomizeInput()
     {
-        _keyIndex = Random.Range(0, moveKeys.Length);
+        var index = _keyIndex;
+        do
+        { 
+            _keyIndex = Random.Range(0, moveKeys.Length);
+        } while (index == _keyIndex);
         _eventHandler.Publish(new RandomKeyEvent(moveKeys[_keyIndex]));
     }
 
