@@ -18,6 +18,23 @@ public class RandomKeyEvent
     public override string ToString() => CurrentKey.ToString();
 }
 
+public class WalkEvent
+{
+    public readonly WalkState CurrentWalkState;
+
+    public WalkEvent(int walkState)
+    {
+        var state = walkState % 2 == 0;
+        this.CurrentWalkState = (WalkState)(state ? 0 : 1);
+    }
+
+    public enum WalkState
+    {
+        Left,
+        Right
+    }
+}
+
 public class EventsBroker : MonoBehaviour, IMessageHandler
 {
     readonly Dictionary<Type, object> subscribers = new Dictionary<Type, object>();

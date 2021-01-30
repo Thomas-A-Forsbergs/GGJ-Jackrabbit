@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode[] moveKeys;
     public float moveSpeed;
     private int _keyIndex;
+    private int _animState;
 
     private EventsBroker _eventHandler;
     private PlayerContextEvent _playerContextButtonEvent;
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         _playerContextButtonEvent = new PlayerContextEvent();
 
         isStuck = false;
-        _keyIndex = Random.Range(0, moveKeys.Length);
+        RandomizeInput();
     }
 
 
@@ -26,8 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(moveKeys[_keyIndex]) && !isStuck)
         {
-            MoveInDirectionCameraIsPointing();
-            RandomizeInput();
+            Walk();
         }
         else if(Input.GetKeyDown(moveKeys[_keyIndex]) && isStuck)
         {
@@ -35,6 +35,13 @@ public class PlayerMovement : MonoBehaviour
             this.isStuck = false;
             RandomizeInput();
         }
+    }
+
+    private void Walk()
+    {
+        MoveInDirectionCameraIsPointing();
+        RandomizeInput();
+        _eventHandler.Publish(new WalkEvent(_animState));
     }
 
     private void RandomizeInput()
