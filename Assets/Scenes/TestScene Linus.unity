@@ -1429,7 +1429,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 963194228}
-  moveKey: 32
+  moveKeys:
+  - codes: 
+    axes: []
+  - codes: 
+    axes: []
+  - codes: 
+    axes: []
+  - codes: 
+    axes: []
   moveSpeed: 4
   isStuck: 0
 --- !u!1 &1779986435
