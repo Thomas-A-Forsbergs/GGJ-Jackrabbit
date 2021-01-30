@@ -32,8 +32,8 @@ public class MoveBetween : MonoBehaviour
         {
             currentLerp = 0;
             moveBack = !moveBack;
-            Invoke(nameof(TurnOn), 0);
-            Invoke(nameof(TurnOff), .4f);
+            //Invoke(nameof(TurnOn), 0);
+            //Invoke(nameof(TurnOff), .4f);
         }
     }
 
