@@ -32,11 +32,11 @@ RectTransform:
   m_Father: {fileID: 422024487053372703}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -200}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: -125}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &422024485455904993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -206,9 +206,9 @@ RectTransform:
   m_Father: {fileID: 422024487053372703}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &422024486393124596
@@ -314,16 +314,16 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 127ecc74f5f577c4d95e369cf27eb3b1, type: 3}
   - KeyCode: 119
     Axis: 
-    Sprite: {fileID: 21300000, guid: ee766379b9eaa574b820b52e381e6a43, type: 3}
+    Sprite: {fileID: 21300000, guid: 28931ab8cb1ebcc45bf78ab930714ab4, type: 3}
   - KeyCode: 97
     Axis: 
-    Sprite: {fileID: 21300000, guid: ee766379b9eaa574b820b52e381e6a43, type: 3}
+    Sprite: {fileID: 21300000, guid: 27907098427ab0741881942acd3ee16d, type: 3}
   - KeyCode: 115
     Axis: 
-    Sprite: {fileID: 21300000, guid: ee766379b9eaa574b820b52e381e6a43, type: 3}
+    Sprite: {fileID: 21300000, guid: 40183449fbcce864faadcd025731c035, type: 3}
   - KeyCode: 100
     Axis: 
-    Sprite: {fileID: 21300000, guid: ee766379b9eaa574b820b52e381e6a43, type: 3}
+    Sprite: {fileID: 21300000, guid: f0b228f0094f2fc4f924299ada995f08, type: 3}
   img:
   - {fileID: 422024486393124599}
   - {fileID: 422024485455904992}
