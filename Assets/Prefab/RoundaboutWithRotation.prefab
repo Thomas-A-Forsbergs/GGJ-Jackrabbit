@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b853ad4d01c9d446897502c6a4e0653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 30
+  _rotationSpeed: 60
 --- !u!136 &1505267600163112731
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -205,7 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d575bbeab1044d1fa90a48c54f0dca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMultifier: 1
 --- !u!1 &1449292550393830
 GameObject:
   m_ObjectHideFlags: 0
