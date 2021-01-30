@@ -29,7 +29,7 @@ public class SwingObstacle : MonoBehaviour
     {
         // TODO: Need to NOT use Z-direction, but in stead use +-direction for launching
         Vector3 direction = this.transform.position;
-        playerRef.GetComponent<Rigidbody>().AddForce(0,0, direction.z * launchForce);
+        playerRef.GetComponent<Rigidbody>().AddForce(direction.x,0, direction.z * launchForce);
         playerRef.isStuck = false;
         playerRef = null;
         _gotPlayerEvent = null;
