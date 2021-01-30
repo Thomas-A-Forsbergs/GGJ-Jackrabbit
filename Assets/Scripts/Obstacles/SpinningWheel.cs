@@ -31,13 +31,7 @@ public class SpinningWheel : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         player = collision.collider.gameObject;
-        //Vector3 pos = player.transform.position;
-        //var dir = transform.position - pos;
-        //pos += dir.normalized * 2f;
-        //pos.y += 0.2f;
         player.transform.position = attachmentPointPos;
-        //_fixedJoint = player.AddComponent<FixedJoint>();
-        //_fixedJoint.connectedBody = this.GetComponent<Rigidbody>();
         player.GetComponent<PlayerMovement>().isStuck = true;
         onWheel = true;
         _eventHandler.SubscribeTo<PlayerContextEvent>(Release);

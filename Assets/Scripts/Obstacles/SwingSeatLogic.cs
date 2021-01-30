@@ -4,7 +4,6 @@ public class SwingSeatLogic : MonoBehaviour
 {
     private PlayerMovement playerRef;
     
-    // Start is called before the first frame update
     void Start()
     {
         
