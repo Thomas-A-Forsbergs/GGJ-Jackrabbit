@@ -2,14 +2,14 @@
 
 public class DebugTouchToWin : MonoBehaviour
 {
-    private WinLoseConditionsBroker _eventHandler;
+    private EventsBroker _eventHandler;
     private WinConditionEvent _winConditionEvent;
 
     
     // Start is called before the first frame update
     void Start()
     {
-        _eventHandler = FindObjectOfType<WinLoseConditionsBroker>();
+        _eventHandler = FindObjectOfType<EventsBroker>();
         _winConditionEvent = new WinConditionEvent();
     }
 

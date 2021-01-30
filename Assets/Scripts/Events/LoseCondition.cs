@@ -2,11 +2,11 @@
 
 public class LoseCondition : MonoBehaviour
 {
-    private WinLoseConditionsBroker _eventHandler;
+    private EventsBroker _eventHandler;
     
     void Start()
     {
-        _eventHandler = FindObjectOfType<WinLoseConditionsBroker>();
+        _eventHandler = FindObjectOfType<EventsBroker>();
         _eventHandler.SubscribeTo<LoseConditionEvent>(GameOver);
     }
 
