@@ -13,10 +13,12 @@ public class Timer : MonoBehaviour
     private bool TimeOut => gameTimerInSeconds <= 0f;
     
     private WinLoseConditionsBroker _eventHandler;
+    private LoseConditionEvent _loseConditionEvent;
     
     void Start()
     {
         _eventHandler = FindObjectOfType<WinLoseConditionsBroker>();
+        _loseConditionEvent = new LoseConditionEvent();
         timerInterval = 1.0f;
     }
     
@@ -29,7 +31,7 @@ public class Timer : MonoBehaviour
         else
         {
             UpdateTimer();
-            _eventHandler.Publish("TimeOut");
+            _eventHandler.Publish(_loseConditionEvent);
         }
 
         if (elapsedTime >= timerInterval)

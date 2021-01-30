@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class WinConditionEvent { }
+public class LoseConditionEvent { }
+
 public class WinLoseConditionsBroker : MonoBehaviour, IMessageHandler
 {
     readonly Dictionary<Type, object> subscribers = new Dictionary<Type, object>();
