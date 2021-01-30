@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public KeyBind[] moveKeys;
     public float moveSpeed;
     private int _keyIndex;
-    private int _animState;
+    private int _animState = 1;
     private bool _justMoved;
 
     private EventsBroker _eventHandler;
