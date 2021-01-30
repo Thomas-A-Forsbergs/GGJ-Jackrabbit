@@ -18,7 +18,7 @@ public class SwingObstacle : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             playerRef = other.gameObject.GetComponent<PlayerMovement>();
-            if (playerRef.isStuck != null) playerRef.isStuck = true;
+            playerRef.isStuck = true;
             _eventHandler.SubscribeTo<SwingLetGoEvent>(SwingLetGo);
             _gotPlayerEvent = new GotPlayerEvent();
             _eventHandler.Publish(_gotPlayerEvent);

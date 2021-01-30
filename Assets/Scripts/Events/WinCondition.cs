@@ -15,7 +15,7 @@ public class WinCondition : MonoBehaviour
 
     void GameWin(WinConditionEvent argument)
     {
-        winGameScreenPrefab.SetActive(true);
+        if(winGameScreenPrefab != null) winGameScreenPrefab.SetActive(true);
         _eventHandler.UnsubscribeFrom<WinConditionEvent>(GameWin);
         Time.timeScale = 0;
     }
