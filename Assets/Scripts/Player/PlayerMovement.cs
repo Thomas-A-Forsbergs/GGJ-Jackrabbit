@@ -60,8 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk()
     {
-        MoveInDirectionCameraIsPointing();
-        RandomizeInput();
+        StartCoroutine(Move());
         _justMoved = true;
         StartCoroutine(ResetDelay());
         _eventHandler.Publish(new WalkEvent(_animState));
@@ -80,9 +79,26 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(new Vector3(dir.x * Time.deltaTime * moveSpeed, 0, dir.z * Time.deltaTime * moveSpeed));
     }
 
+    private IEnumerator Move()
+    {
+        var timer = 0.5f; 
+        while (true)
+        {
+            timer -= Time.deltaTime;
+            if (timer < 0)
+            {
+                break;
+            }
+            MoveInDirectionCameraIsPointing();
+
+            yield return null;
+        }
+    }
+
     private IEnumerator ResetDelay()
     {
         yield return new WaitForSeconds(0.5f);
+        RandomizeInput();
         _justMoved = false;
     }
 }

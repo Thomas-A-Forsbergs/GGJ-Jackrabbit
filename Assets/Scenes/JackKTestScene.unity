@@ -317,7 +317,7 @@ MonoBehaviour:
   - codes: 73000000
     axes:
     - Left Trigger
-  moveSpeed: 300
+  moveSpeed: 3
   isStuck: 0
 --- !u!4 &224798134
 Transform:
