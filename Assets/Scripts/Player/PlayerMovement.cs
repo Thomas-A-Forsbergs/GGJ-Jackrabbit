@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     public void Update()
     {
         if (_justMoved) return;
+
+        if (isStuck && Input.GetKeyDown(KeyCode.Space)) _eventHandler.Publish(new PlayerContextEvent());
         var currentKeyBind = moveKeys[_keyIndex];
         foreach (var keyCode in currentKeyBind.codes)
         {
