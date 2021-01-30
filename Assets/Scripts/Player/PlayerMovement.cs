@@ -36,12 +36,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 Walk();
             }
-            else if (Input.GetKeyDown(keyCode) && isStuck)
-            {
-                _eventHandler.Publish(_playerContextButtonEvent);
-                this.isStuck = false;
-                RandomizeInput();
-            }
         }
 
         foreach (var axis in currentKeyBind.axes)
@@ -49,12 +43,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetAxis(axis) >= 0.9f && !isStuck)
             {
                 Walk();
-            }
-            else if (Input.GetAxis(axis) >= 0.9f && isStuck)
-            {
-                _eventHandler.Publish(_playerContextButtonEvent);
-                this.isStuck = false;
-                RandomizeInput();
             }
         }
     }
