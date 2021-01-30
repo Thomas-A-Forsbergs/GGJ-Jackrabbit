@@ -6,6 +6,18 @@ public class PlayerContextEvent { }
 public class WinConditionEvent { }
 public class LoseConditionEvent { }
 
+public class RandomKeyEvent
+{
+    public readonly KeyCode CurrentKey;
+
+    public RandomKeyEvent(KeyCode currentKey)
+    {
+        this.CurrentKey = currentKey;
+    }
+
+    public override string ToString() => CurrentKey.ToString();
+}
+
 public class EventsBroker : MonoBehaviour, IMessageHandler
 {
     readonly Dictionary<Type, object> subscribers = new Dictionary<Type, object>();
