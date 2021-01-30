@@ -2,6 +2,8 @@
 
 public class WinCondition : MonoBehaviour
 {
+    [SerializeField] private GameObject winGameScreenPrefab;
+    
     private EventsBroker _eventHandler;
     
     // Start is called before the first frame update
@@ -13,7 +15,7 @@ public class WinCondition : MonoBehaviour
 
     void GameWin(WinConditionEvent argument)
     {
-        Debug.Log("Event " + argument.GetType() + " fired!");
+        if(winGameScreenPrefab != null) winGameScreenPrefab.SetActive(true);
         _eventHandler.UnsubscribeFrom<WinConditionEvent>(GameWin);
         Time.timeScale = 0;
     }
