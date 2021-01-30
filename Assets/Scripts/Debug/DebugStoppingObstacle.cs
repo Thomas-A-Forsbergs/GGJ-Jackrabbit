@@ -15,7 +15,7 @@ public class DebugStoppingObstacle : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             var player = other.gameObject.GetComponent<PlayerMovement>();
-            if (player.isStuck != null) player.isStuck = true;
+            player.isStuck = true;
         }
     }
 
