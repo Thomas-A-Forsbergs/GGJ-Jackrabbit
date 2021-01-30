@@ -420,6 +420,7 @@ public class MSCameraController : MonoBehaviour {
 
 		GameObject temp = new GameObject ("PlayerCams");
 		temp.transform.parent = targetTransform;
+		temp.transform.localPosition = Vector3.zero;
 		objPosicStopCameras = new GameObject[cameras.Length];
 		originalRotation = new Quaternion[cameras.Length];
 		originalPosition = new GameObject[cameras.Length];
