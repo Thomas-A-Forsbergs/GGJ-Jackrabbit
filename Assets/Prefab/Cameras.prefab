@@ -93,9 +93,9 @@ MonoBehaviour:
       invertYInput: 0
     OrbitalThatFollows:
       displacementSpeed: 5
-      customLookAt: 0
+      customLookAt: 1
       spinSpeedCustomLookAt: 15
-      sensibility: 0.8
+      sensibility: 1
       speedScrool: 1
       speedYAxis: 0.5
       minDistance: 5
