@@ -2,12 +2,12 @@
 
 public class WinCondition : MonoBehaviour
 {
-    private WinLoseConditionsBroker _eventHandler;
+    private EventsBroker _eventHandler;
     
     // Start is called before the first frame update
     void Start()
     {
-        _eventHandler = FindObjectOfType<WinLoseConditionsBroker>();
+        _eventHandler = FindObjectOfType<EventsBroker>();
         _eventHandler.SubscribeTo<WinConditionEvent>(GameWin);
     }
 

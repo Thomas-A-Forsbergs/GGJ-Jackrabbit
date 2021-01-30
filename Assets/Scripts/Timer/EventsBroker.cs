@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class PlayerContextEvent { }
 public class WinConditionEvent { }
 public class LoseConditionEvent { }
 
-public class WinLoseConditionsBroker : MonoBehaviour, IMessageHandler
+public class EventsBroker : MonoBehaviour, IMessageHandler
 {
     readonly Dictionary<Type, object> subscribers = new Dictionary<Type, object>();
     

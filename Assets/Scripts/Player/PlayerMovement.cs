@@ -6,11 +6,30 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode moveKey = KeyCode.Space;
     public float moveSpeed;
 
+    private EventsBroker _eventHandler;
+    private PlayerContextEvent _playerContextButtonEvent;
+    
+    public bool isStuck;
+
+    private void Start()
+    {
+        _eventHandler = FindObjectOfType<EventsBroker>();
+        _playerContextButtonEvent = new PlayerContextEvent();
+
+        isStuck = false;
+    }
+
+
     public void Update()
     {
-        if (Input.GetKey(moveKey))
+        if (Input.GetKey(moveKey) && !isStuck)
         {
             MoveInDirectionCameraIsPointing();
+        }
+        else if(Input.GetKeyDown(moveKey) && isStuck)
+        {
+            _eventHandler.Publish(_playerContextButtonEvent);
+            this.isStuck = false;
         }
     }
 
