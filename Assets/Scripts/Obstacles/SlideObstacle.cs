@@ -17,8 +17,8 @@ public class SlideObstacle : MonoBehaviour
 
     void SlideLetGo()
     {
-        Vector3 direction = new Vector3(playerRef.transform.rotation.x, 1, playerRef.transform.rotation.z);
-        playerRef.transform.LookAt(direction);
+        //Vector3 direction = new Vector3(playerRef.transform.rotation.x, playerRef.transform.rotation.y, playerRef.transform.rotation.z);
+        //playerRef.transform.LookAt(direction);
         playerRef.GetComponent<Rigidbody>().AddForce(this.transform.forward * launchForce);
         playerRef = null;
     }
