@@ -26,7 +26,6 @@ public class SwingObstacle : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             playerRef = other.gameObject.GetComponent<PlayerMovement>();
-            playerRef.isStuck = true;
             SlideLetGo();
         }
     }
@@ -34,7 +33,6 @@ public class SwingObstacle : MonoBehaviour
     void SlideLetGo()
     {
         playerRef.GetComponent<Rigidbody>().AddForce(this.transform.forward * launchForce);
-        playerRef.isStuck = false;
         playerRef = null;
     }
     
