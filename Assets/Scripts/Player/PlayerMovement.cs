@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -76,7 +77,6 @@ public class PlayerMovement : MonoBehaviour
     private void MoveInDirectionCameraIsPointing()
     {
         var dir = (Vector3.forward - cameraTransform.localPosition).normalized;
-        print(dir);
         transform.Translate(new Vector3(dir.x * Time.deltaTime * moveSpeed, 0, dir.z * Time.deltaTime * moveSpeed));
     }
 
@@ -112,17 +112,8 @@ public class KeyBind
 
     public override string ToString()
     {
-        var fullString = "";
-        foreach (var keyCode in codes)
-        {
-            fullString = keyCode + " ";
-        }
+        var fullString = codes.Aggregate("", (current, keyCode) => current + (keyCode + " "));
 
-        foreach (var axis in axes)
-        {
-            fullString = axis + " ";
-        }
-
-        return fullString;
+        return axes.Aggregate(fullString, (current, axis) => current + (axis + " "));
     }
 }
