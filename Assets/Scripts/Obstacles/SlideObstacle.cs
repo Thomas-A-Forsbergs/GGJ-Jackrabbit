@@ -6,6 +6,11 @@ public class SlideObstacle : MonoBehaviour
 
     [SerializeField] private float launchForce = 2f;
 
+    private void Start()
+    {
+        
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))

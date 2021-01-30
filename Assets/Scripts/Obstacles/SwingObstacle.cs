@@ -2,18 +2,46 @@
 
 public class SwingObstacle : MonoBehaviour
 {
-    private EventsBroker _eventHandler;
-    private GotPlayerEvent _gotPlayerEvent;
     private PlayerMovement playerRef;
 
     [SerializeField] private float launchForce = 2f;
-    
-    void Start()
+
+    private void Start()
     {
-        _eventHandler = FindObjectOfType<EventsBroker>();
+        //needed in order to be switched on and off
     }
 
-    void OnCollisionEnter(Collision other)
+    private void OnEnable()
+    {
+        this.GetComponent<BoxCollider>().enabled = true;
+    }
+    private void OnDisable()
+    {
+        this.GetComponent<BoxCollider>().enabled = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        
+        if(other.gameObject.CompareTag("Player"))
+        {
+            playerRef = other.gameObject.GetComponent<PlayerMovement>();
+            playerRef.isStuck = true;
+            SlideLetGo();
+        }
+    }
+
+    void SlideLetGo()
+    {
+        playerRef.GetComponent<Rigidbody>().AddForce(this.transform.forward * launchForce);
+        playerRef.isStuck = false;
+        playerRef = null;
+    }
+    
+    
+    /*
+     *
+     *void OnTriggerEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
@@ -24,15 +52,16 @@ public class SwingObstacle : MonoBehaviour
             _eventHandler.Publish(_gotPlayerEvent);
         }
     }
-
-    void SwingLetGo(SwingLetGoEvent argument)
+     * 
+     *void SwingLetGo(SwingLetGoEvent argument)
     {
-        // TODO: Need to NOT use Z-direction, but in stead use +-direction for launching
-        Vector3 direction = this.transform.position;
-        playerRef.GetComponent<Rigidbody>().AddForce(direction.x,0, direction.z * launchForce);
+        this.GetComponentInChildren<SlideObstacle>().gameObject.SetActive(true);
+        playerRef.GetComponent<Rigidbody>().AddForce(this.transform.forward * launchForce);
         playerRef.isStuck = false;
         playerRef = null;
         _gotPlayerEvent = null;
         _eventHandler.UnsubscribeFrom<SwingLetGoEvent>(SwingLetGo);
     }
+     * 
+     */
 }

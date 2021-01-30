@@ -5,6 +5,8 @@ public class MoveBetween : MonoBehaviour
 {
     private EventsBroker _eventHandler;
     private SwingLetGoEvent _swingLetGoEvent;
+
+    [SerializeField]private GameObject[] children;
     
     public Transform pos1, pos2;
     public float speed;
@@ -16,6 +18,7 @@ public class MoveBetween : MonoBehaviour
     private void Start()
     {
         //transform.DetachChildren();
+        
         _eventHandler = FindObjectOfType<EventsBroker>();
         _eventHandler.SubscribeTo<GotPlayerEvent>(SwingLetGo);
     }
@@ -29,15 +32,29 @@ public class MoveBetween : MonoBehaviour
         {
             currentLerp = 0;
             moveBack = !moveBack;
-            if (_swingLetGoEvent != null)
-            {
-                _eventHandler.Publish(_swingLetGoEvent);
-            }
+            Invoke(nameof(TurnOn), 0);
+            Invoke(nameof(TurnOff), .4f);
         }
     }
 
     void SwingLetGo(GotPlayerEvent argument)
     {
         _swingLetGoEvent = new SwingLetGoEvent();
+    }
+
+    void TurnOn()
+    {
+        for (int i = 0; i < children.Length; i++)
+        {
+            children[i].SetActive(true);
+        }
+    }
+    
+    void TurnOff()
+    {
+        for (int i = 0; i < children.Length; i++)
+        {
+            children[i].SetActive(false);
+        };    
     }
 }
