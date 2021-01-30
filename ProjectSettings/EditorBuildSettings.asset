@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 32a974d349a56d24caeb4f9baa7da620
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 1a02dd03e9371e54293aaa9fe389d245
+    path: Assets/Scenes/StoryScene.unity
+    guid: fae3b53d22adeb94999bc1ccf49aaaf5
+  - enabled: 1
+    path: Assets/Scenes/JackJ.unity
+    guid: b20710227907e994baf8af3e018e1e39
   m_configObjects: {}
