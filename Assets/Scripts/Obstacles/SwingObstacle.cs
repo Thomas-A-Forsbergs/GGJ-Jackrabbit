@@ -1,65 +1,47 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class SwingObstacle : MonoBehaviour
 {
-    private PlayerMovement playerRef;
-
+    private GameObject playerRef;
+    private bool onSwing;
+    [SerializeField]private Transform launchpointAnchor;
+    [SerializeField]private Transform seatAnchor;
+    private Vector3 seatAnchorPos;
+    
     [SerializeField] private float launchForce = 2f;
 
     private void Start()
     {
-        //needed in order to be switched on and off
+        onSwing = false;
     }
-
-    private void OnEnable()
+    
+    private void Update()
     {
-        this.GetComponent<BoxCollider>().enabled = true;
-    }
-    private void OnDisable()
-    {
-        this.GetComponent<BoxCollider>().enabled = false;
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        
-        if(other.gameObject.CompareTag("Player"))
+        seatAnchorPos = launchpointAnchor.transform.position;
+        if (onSwing)
         {
-            playerRef = other.gameObject.GetComponent<PlayerMovement>();
-            SlideLetGo();
+            playerRef.transform.position = seatAnchorPos;
         }
     }
 
-    void SlideLetGo()
+    void OnCollisionEnter(Collision collision)
     {
-        playerRef.GetComponent<Rigidbody>().AddForce(this.transform.forward * launchForce);
-        playerRef = null;
+        playerRef = collision.collider.gameObject;
+        playerRef.transform.position = seatAnchorPos;
+        playerRef.GetComponent<PlayerMovement>().isStuck = true;
+        onSwing = true;
     }
-    
-    
-    /*
-     *
-     *void OnTriggerEnter(Collision other)
+
+    public void SwingLaunch()
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (onSwing)
         {
-            playerRef = other.gameObject.GetComponent<PlayerMovement>();
-            playerRef.isStuck = true;
-            _eventHandler.SubscribeTo<SwingLetGoEvent>(SwingLetGo);
-            _gotPlayerEvent = new GotPlayerEvent();
-            _eventHandler.Publish(_gotPlayerEvent);
+            onSwing = false;
+            playerRef.transform.position = launchpointAnchor.transform.position;
+            playerRef.GetComponent<Rigidbody>().AddForce(launchpointAnchor.transform.forward * launchForce);
+            playerRef.GetComponent<PlayerMovement>().isStuck = false;
+            playerRef = null;
         }
     }
-     * 
-     *void SwingLetGo(SwingLetGoEvent argument)
-    {
-        this.GetComponentInChildren<SlideObstacle>().gameObject.SetActive(true);
-        playerRef.GetComponent<Rigidbody>().AddForce(this.transform.forward * launchForce);
-        playerRef.isStuck = false;
-        playerRef = null;
-        _gotPlayerEvent = null;
-        _eventHandler.UnsubscribeFrom<SwingLetGoEvent>(SwingLetGo);
-    }
-     * 
-     */
 }

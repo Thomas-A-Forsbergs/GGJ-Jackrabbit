@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq.Expressions;
+using UnityEngine;
 
 public class SlideObstacle : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class SlideObstacle : MonoBehaviour
 
     void SlideLetGo()
     {
+        playerRef.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         playerRef.GetComponent<Rigidbody>().AddForce(this.transform.forward * launchForce);
         playerRef = null;
     }
