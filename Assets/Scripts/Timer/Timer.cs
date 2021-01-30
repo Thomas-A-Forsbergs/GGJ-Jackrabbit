@@ -5,7 +5,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private float gameTimerInSeconds;
     [SerializeField] private Text gameTimerTextObject;
-    [SerializeField] private string gameTimerTextFormat = $"Time Left:";
+    [SerializeField] private string gameTimerTextFormat = "Time Left:";
     
     private float timerInterval;
     private float elapsedTime;
