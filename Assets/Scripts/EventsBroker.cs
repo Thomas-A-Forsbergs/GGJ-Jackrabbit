@@ -5,6 +5,8 @@ using UnityEngine;
 public class SwingLetGoEvent { }
 public class GotPlayerEvent { }
 public class PlayerContextEvent { }
+
+public class ShowContextButton { }
 public class WinConditionEvent { }
 public class LoseConditionEvent { }
 

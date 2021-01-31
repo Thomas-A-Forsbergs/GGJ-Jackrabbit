@@ -34,6 +34,7 @@ public class SpinningWheel : MonoBehaviour
         player.transform.position = attachmentPointPos;
         player.GetComponent<PlayerMovement>().isStuck = true;
         onWheel = true;
+        _eventHandler.Publish(new ShowContextButton());
         _eventHandler.SubscribeTo<PlayerContextEvent>(Release);
     }
 
