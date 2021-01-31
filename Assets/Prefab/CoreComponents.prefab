@@ -56,7 +56,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7c3a83c31e7b64ca57a11858f2f88e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winGameScreenPrefab: {fileID: 0}
 --- !u!1 &1035517917
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,8 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd911f08d22fba4b96dde2df941d0d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTimerInSeconds: 60
-  gameTimerTextObject: {fileID: 0}
+  gameTimerInSeconds: 180
   gameTimerTextFormat: 'Time Left:'
 --- !u!1 &8351956605514071564
 GameObject:
