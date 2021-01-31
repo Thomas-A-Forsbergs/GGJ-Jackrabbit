@@ -6,20 +6,19 @@ public class PlayerMovement : MonoBehaviour
 {
     public Transform cameraTransform;
     public KeyBind[] moveKeys;
+    public KeyCode[] contextKeys = {KeyCode.Space, KeyCode.Joystick1Button0};
     public float moveSpeed;
     private int _keyIndex;
     private int _animState = 1;
     private bool _justMoved;
 
     private EventsBroker _eventHandler;
-    private PlayerContextEvent _playerContextButtonEvent;
-    
+
     public bool isStuck;
 
     private void Start()
     {
         _eventHandler = FindObjectOfType<EventsBroker>();
-        _playerContextButtonEvent = new PlayerContextEvent();
 
         isStuck = false;
         RandomizeInput();
@@ -30,7 +29,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_justMoved) return;
 
-        if (isStuck && Input.GetKeyDown(KeyCode.Space)) _eventHandler.Publish(new PlayerContextEvent());
+        foreach (var keyCode in contextKeys)
+        {
+            if (isStuck && Input.GetKeyDown(keyCode)) _eventHandler.Publish(new PlayerContextEvent());
+        }
         var currentKeyBind = moveKeys[_keyIndex];
         foreach (var keyCode in currentKeyBind.codes)
         {
