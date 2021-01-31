@@ -233,7 +233,8 @@ MonoBehaviour:
   - codes: 73000000
     axes:
     - Left Trigger
-  moveSpeed: 3
+  contextKeys: 200000005e010000
+  moveSpeed: 6
   isStuck: 0
 --- !u!54 &4427750267923456027
 Rigidbody:
