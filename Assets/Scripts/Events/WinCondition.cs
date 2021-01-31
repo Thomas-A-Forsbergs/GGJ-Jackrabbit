@@ -15,6 +15,6 @@ public class WinCondition : MonoBehaviour
     void GameWin(WinConditionEvent argument)
     {
         _eventHandler.UnsubscribeFrom<WinConditionEvent>(GameWin);
-        SceneManager.LoadScene("WinScene");
+        SceneManager.LoadScene("PoststoryScene");
     }
 }
