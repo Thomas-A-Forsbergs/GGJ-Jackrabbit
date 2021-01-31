@@ -12,6 +12,7 @@ public class CurrentKeyUI : MonoBehaviour
             var amount = 0;
             foreach (var sprite in sprites)
             {
+                if (amount > 1) return;
                 if (keyEvent.ToString().Contains(sprite.KeyCode.ToString()))
                 {
                     img[amount].sprite = sprite.Sprite;

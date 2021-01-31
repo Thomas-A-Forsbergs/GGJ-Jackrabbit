@@ -313,24 +313,24 @@ MonoBehaviour:
   - KeyCode: 8
     Axis: Left Trigger
     Sprite: {fileID: 21300000, guid: 127ecc74f5f577c4d95e369cf27eb3b1, type: 3}
-  - KeyCode: 119
-    Axis: 
-    Sprite: {fileID: 21300000, guid: 28931ab8cb1ebcc45bf78ab930714ab4, type: 3}
-  - KeyCode: 97
-    Axis: 
-    Sprite: {fileID: 21300000, guid: 27907098427ab0741881942acd3ee16d, type: 3}
-  - KeyCode: 115
-    Axis: 
-    Sprite: {fileID: 21300000, guid: 40183449fbcce864faadcd025731c035, type: 3}
-  - KeyCode: 100
-    Axis: 
-    Sprite: {fileID: 21300000, guid: f0b228f0094f2fc4f924299ada995f08, type: 3}
   - KeyCode: 330
     Axis: 
     Sprite: {fileID: 21300000, guid: 01adbce51f7a5f6409950ee9b4587d76, type: 3}
   - KeyCode: 32
     Axis: 
     Sprite: {fileID: 21300000, guid: ee766379b9eaa574b820b52e381e6a43, type: 3}
+  - KeyCode: 115
+    Axis: 
+    Sprite: {fileID: 21300000, guid: 40183449fbcce864faadcd025731c035, type: 3}
+  - KeyCode: 100
+    Axis: 
+    Sprite: {fileID: 21300000, guid: f0b228f0094f2fc4f924299ada995f08, type: 3}
+  - KeyCode: 119
+    Axis: 
+    Sprite: {fileID: 21300000, guid: 28931ab8cb1ebcc45bf78ab930714ab4, type: 3}
+  - KeyCode: 97
+    Axis: 
+    Sprite: {fileID: 21300000, guid: 27907098427ab0741881942acd3ee16d, type: 3}
   img:
   - {fileID: 422024486393124599}
   - {fileID: 422024485455904992}

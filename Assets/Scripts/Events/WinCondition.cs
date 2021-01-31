@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinCondition : MonoBehaviour
 {
-    [SerializeField] private GameObject winGameScreenPrefab;
-    
     private EventsBroker _eventHandler;
     
     // Start is called before the first frame update
@@ -15,8 +14,7 @@ public class WinCondition : MonoBehaviour
 
     void GameWin(WinConditionEvent argument)
     {
-        if(winGameScreenPrefab != null) winGameScreenPrefab.SetActive(true);
         _eventHandler.UnsubscribeFrom<WinConditionEvent>(GameWin);
-        Time.timeScale = 0;
+        SceneManager.LoadScene("WinScene");
     }
 }
