@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     [SerializeField] private float gameTimerInSeconds;
-    [SerializeField] private Text gameTimerTextObject;
     [SerializeField] private string gameTimerTextFormat = "Time Left:";
     
     private float timerInterval;
@@ -48,6 +47,6 @@ public class Timer : MonoBehaviour
         {
             gameTimerInSeconds = 0;
         }
-        gameTimerTextObject.text = $"{gameTimerTextFormat} {gameTimerInSeconds}s";
+        FindObjectOfType<EventsBroker>().Publish(new TimeLeftEvent($"{gameTimerTextFormat} {gameTimerInSeconds}s"));
     }
 }
