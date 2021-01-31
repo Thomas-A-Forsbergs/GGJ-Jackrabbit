@@ -3484,6 +3484,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1911637051}
+    - target: {fileID: 7316012967100706793, guid: cad4560880a40214880c8f5ef73774d9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cad4560880a40214880c8f5ef73774d9, type: 3}
 --- !u!1001 &6146817559788606933
@@ -3493,6 +3498,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 637288184949182605, guid: 80c40188e0ecc4a4a87c047940501b41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -82.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 637288184949182605, guid: 80c40188e0ecc4a4a87c047940501b41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 37.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 637288184949182605, guid: 80c40188e0ecc4a4a87c047940501b41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842726221515435167, guid: 80c40188e0ecc4a4a87c047940501b41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.22
+      objectReference: {fileID: 0}
     - target: {fileID: 2281622722538495380, guid: 80c40188e0ecc4a4a87c047940501b41,
         type: 3}
       propertyPath: m_Mesh
@@ -3583,6 +3608,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 604049616}
+    - target: {fileID: 5207816639575363628, guid: 80c40188e0ecc4a4a87c047940501b41,
+        type: 3}
+      propertyPath: launchForce
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 6146817558223270904, guid: 80c40188e0ecc4a4a87c047940501b41,
         type: 3}
       propertyPath: m_Name
@@ -3673,5 +3703,15 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 165742915}
+    - target: {fileID: 6451872320823793301, guid: 80c40188e0ecc4a4a87c047940501b41,
+        type: 3}
+      propertyPath: launchForce
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959428824427103406, guid: 80c40188e0ecc4a4a87c047940501b41,
+        type: 3}
+      propertyPath: launchForce
+      value: 700
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c40188e0ecc4a4a87c047940501b41, type: 3}
