@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5539233737935445071}
   m_Layer: 0
-  m_Name: SpawnPoint1
-  m_TagString: Untagged
+  m_Name: WinSpawnPoint1
+  m_TagString: WinPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5539233737935445068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.1314316, y: 5.21, z: 133.50252}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5539233739526755042}
@@ -40,8 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5539233738376721058}
   m_Layer: 0
-  m_Name: SpawnPoint5
-  m_TagString: Untagged
+  m_Name: WinSpawnPoint5
+  m_TagString: WinPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5539233738376721059}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.9, y: 5.21, z: 161}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5539233739526755042}
@@ -70,8 +70,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5539233738647147717}
   m_Layer: 0
-  m_Name: SpawnPoint3
-  m_TagString: Untagged
+  m_Name: WinSpawnPoint3
+  m_TagString: WinPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5539233738647147722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8, y: 5.21, z: 196.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5539233739526755042}
@@ -100,8 +100,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5539233738897782567}
   m_Layer: 0
-  m_Name: SpawnPoint2
-  m_TagString: Untagged
+  m_Name: WinSpawnPoint2
+  m_TagString: WinPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5539233738897782564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.6, y: 5.21, z: 159.6}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5539233739526755042}
@@ -130,8 +130,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5539233739209853117}
   m_Layer: 0
-  m_Name: SpawnPoint4
-  m_TagString: Untagged
+  m_Name: WinSpawnPoint4
+  m_TagString: WinPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5539233739209853090}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.2, y: 5.21, z: 136.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5539233739526755042}
@@ -159,9 +159,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5539233739526755042}
-  - component: {fileID: 5539233739526755069}
+  - component: {fileID: 9094280609910412837}
   m_Layer: 0
-  m_Name: SpawnPoints
+  m_Name: WinSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,10 +184,11 @@ Transform:
   - {fileID: 5539233739209853117}
   - {fileID: 5539233738376721058}
   - {fileID: 5539233739639126044}
+  - {fileID: 5762278304919372320}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5539233739526755069
+--- !u!114 &9094280609910412837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,9 +197,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5539233739526755043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ed748ed418c4cf982a24d91e369380, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e041130d8a09ac48b9484fbee9d8845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childrenObjectPrefabs:
+  - {fileID: 1558249443254410533, guid: be6f4bf1e78699147808186ed756ab61, type: 3}
+  - {fileID: 1447968248792485499, guid: d128ae54c53a8f7418d3ff54a1e28285, type: 3}
+  - {fileID: 8760588333639787582, guid: 546312de1bf662a4181557e790164f2d, type: 3}
+  - {fileID: 4861105791312966225, guid: ad4a1237e1eb24c4d9f06117a5b1032f, type: 3}
 --- !u!1 &5539233739639126045
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,8 +215,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5539233739639126044}
   m_Layer: 0
-  m_Name: SpawnPoint6
-  m_TagString: Untagged
+  m_Name: WinSpawnPoint6
+  m_TagString: WinPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,9 +229,84 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5539233739639126045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46, y: 5.21, z: 196.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5539233739526755042}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8709580162207880659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5539233739526755042}
+    m_Modifications:
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974739575537424382, guid: fe58429bc93adce46b4719ebff225f74,
+        type: 3}
+      propertyPath: m_Name
+      value: GameWinPoint
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe58429bc93adce46b4719ebff225f74, type: 3}
+--- !u!4 &5762278304919372320 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3974739575537424371, guid: fe58429bc93adce46b4719ebff225f74,
+    type: 3}
+  m_PrefabInstance: {fileID: 8709580162207880659}
+  m_PrefabAsset: {fileID: 0}
