@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseCondition : MonoBehaviour
 {
@@ -12,8 +13,7 @@ public class LoseCondition : MonoBehaviour
 
     void GameOver(LoseConditionEvent argument)
     {
-        Debug.Log("Event " + argument.GetType() + " fired!");
         _eventHandler.UnsubscribeFrom<LoseConditionEvent>(GameOver);
-        Time.timeScale = 0;
+        SceneManager.LoadScene("LoseScene");
     }
 }
