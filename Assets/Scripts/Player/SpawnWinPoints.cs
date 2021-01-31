@@ -8,17 +8,20 @@ public class SpawnWinPoints : MonoBehaviour {
 
     private void Start() {
         spawnPoints = new List<Transform>();
-        touchToWin = GameObject.FindWithTag("WinPointBox");
-        var children = GetComponentInChildren<Transform>();
+        var children = GetComponentsInChildren<Transform>();
         foreach(Transform child in children)
         {
-            if (child.GetComponent<TouchToWin>()) return;
+            if (TryGetComponent(out TouchToWin win))
+            {
+                touchToWin = win.gameObject;
+            }
             spawnPoints.Add(child.transform);
-            int RandomIndex = UnityEngine.Random.Range(0, childrenObjectPrefabs.Length);
-            Instantiate(childrenObjectPrefabs[RandomIndex], child.transform);
         }
-        int randomIndex = UnityEngine.Random.Range(0, spawnPoints.Count);
-        var tmpPosition = new Vector3(spawnPoints[randomIndex].position.x, spawnPoints[randomIndex].position.y +1, spawnPoints[randomIndex].position.z);
+        int randomSpawn = UnityEngine.Random.Range(0, spawnPoints.Count);
+        int randomChild = UnityEngine.Random.Range(0, childrenObjectPrefabs.Length);
+        var instanceGameObject = Instantiate(childrenObjectPrefabs[randomChild], spawnPoints[randomSpawn]);
+        instanceGameObject.transform.position = spawnPoints[randomSpawn].position;
+        var tmpPosition = new Vector3(spawnPoints[randomSpawn].position.x, spawnPoints[randomSpawn].position.y +1, spawnPoints[randomSpawn].position.z);
         touchToWin.transform.position = tmpPosition;
     }
 }
