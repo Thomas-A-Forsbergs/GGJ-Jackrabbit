@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 32a974d349a56d24caeb4f9baa7da620
   - enabled: 1
-    path: Assets/Scenes/StoryScene.unity
+    path: Assets/Scenes/PrestoryScene.unity
     guid: fae3b53d22adeb94999bc1ccf49aaaf5
   - enabled: 1
     path: Assets/Scenes/JackJ.unity
