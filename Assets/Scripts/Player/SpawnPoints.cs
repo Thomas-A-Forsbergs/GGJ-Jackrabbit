@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnPoints : MonoBehaviour {
+public class SpawnPoints : MonoBehaviour
+{
+    public GameObject playerPrefab;
     private GameObject player;
 
     private void Start() {

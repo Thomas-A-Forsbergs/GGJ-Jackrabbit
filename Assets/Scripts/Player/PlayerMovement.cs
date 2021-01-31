@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Transform cameraTransform;
     public KeyBind[] moveKeys;
-    public KeyCode[] contextKeys = {KeyCode.Space, KeyCode.Joystick1Button0};
+    public KeyBind contextKeys = new KeyBind(KeyCode.Space, KeyCode.Joystick1Button0);
     public float moveSpeed;
     private int _keyIndex;
     private int _animState = 1;
@@ -14,14 +14,32 @@ public class PlayerMovement : MonoBehaviour
 
     private EventsBroker _eventHandler;
 
-    public bool isStuck;
+    private bool _isStuck;
+    public bool isStuck
+    {
+        get => _isStuck;
+        set
+        {
+            _isStuck = value;
+            if (value == false)
+            {
+                RandomizeInput();
+            }
+        }
+    }
 
     private void Start()
     {
         _eventHandler = FindObjectOfType<EventsBroker>();
+        _eventHandler.SubscribeTo<ShowContextButton>(ShowContext);
 
         isStuck = false;
         RandomizeInput();
+    }
+
+    private void ShowContext(ShowContextButton contextButton)
+    {
+        _eventHandler.Publish(new RandomKeyEvent(contextKeys));
     }
 
 
@@ -29,9 +47,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_justMoved) return;
 
-        foreach (var keyCode in contextKeys)
+        foreach (var keyCode in contextKeys.codes)
         {
-            if (isStuck && Input.GetKeyDown(keyCode)) _eventHandler.Publish(new PlayerContextEvent());
+            if (isStuck && Input.GetKeyDown(keyCode))
+            {
+                _eventHandler.Publish(new PlayerContextEvent());
+            }
         }
         var currentKeyBind = moveKeys[_keyIndex];
         foreach (var keyCode in currentKeyBind.codes)
@@ -95,7 +116,8 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator ResetDelay()
     {
         yield return new WaitForSeconds(0.5f);
-        RandomizeInput();
+        if (!isStuck)
+            RandomizeInput();
         _justMoved = false;
     }
 }
@@ -105,6 +127,11 @@ public class KeyBind
 {
     public KeyCode[] codes;
     public string[] axes;
+
+    public KeyBind(params KeyCode[] keyCode)
+    {
+        codes = keyCode;
+    }
 
     public override string ToString()
     {
