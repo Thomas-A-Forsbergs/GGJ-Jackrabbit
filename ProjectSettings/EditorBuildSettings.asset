@@ -24,9 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PoststoryScene.unity
     guid: c54ba43fdbf690b4ba1ea942c50972ec
   - enabled: 1
-    path: Assets/Scenes/WinScene.unity
-    guid: a90233e2f5ff7f344bc989cf192e93a3
-  - enabled: 1
     path: Assets/Scenes/LoseScene.unity
     guid: 5029c3b1aca054245ac727ddf74a8fca
+  - enabled: 0
+    path: Assets/Scenes/WinScene.unity
+    guid: a90233e2f5ff7f344bc989cf192e93a3
   m_configObjects: {}
