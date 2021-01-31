@@ -37,6 +37,16 @@ public class WalkEvent
     }
 }
 
+public class TimeLeftEvent
+{
+    public readonly string TimeLeft;
+
+    public TimeLeftEvent(string timeLeft)
+    {
+        this.TimeLeft = timeLeft;
+    }
+}
+
 public class EventsBroker : MonoBehaviour, IMessageHandler
 {
     readonly Dictionary<Type, object> subscribers = new Dictionary<Type, object>();
