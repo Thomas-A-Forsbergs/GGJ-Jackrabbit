@@ -10,7 +10,9 @@ public class SpawnWinPoints : MonoBehaviour {
         spawnPoints = new List<Transform>();
         touchToWin = GameObject.FindWithTag("WinPointBox");
         var children = GetComponentInChildren<Transform>();
-        foreach(Transform child in children) {
+        foreach(Transform child in children)
+        {
+            if (child.GetComponent<TouchToWin>()) return;
             spawnPoints.Add(child.transform);
             int RandomIndex = UnityEngine.Random.Range(0, childrenObjectPrefabs.Length);
             Instantiate(childrenObjectPrefabs[RandomIndex], child.transform);
