@@ -13,7 +13,6 @@ public class LoseCondition : MonoBehaviour
 
     void GameOver(LoseConditionEvent argument)
     {
-        Debug.Log("Event " + argument.GetType() + " fired!");
         _eventHandler.UnsubscribeFrom<LoseConditionEvent>(GameOver);
         SceneManager.LoadScene("LoseScene");
     }
