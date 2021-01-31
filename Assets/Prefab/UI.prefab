@@ -325,6 +325,12 @@ MonoBehaviour:
   - KeyCode: 100
     Axis: 
     Sprite: {fileID: 21300000, guid: f0b228f0094f2fc4f924299ada995f08, type: 3}
+  - KeyCode: 330
+    Axis: 
+    Sprite: {fileID: 21300000, guid: 01adbce51f7a5f6409950ee9b4587d76, type: 3}
+  - KeyCode: 32
+    Axis: 
+    Sprite: {fileID: 21300000, guid: ee766379b9eaa574b820b52e381e6a43, type: 3}
   img:
   - {fileID: 422024486393124599}
   - {fileID: 422024485455904992}
